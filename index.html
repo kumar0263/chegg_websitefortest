@@ -16,10 +16,27 @@
     <div id="message">Dear Expert</div>
 
 <script>
-  // Wait for 10 seconds (10000 milliseconds) and then change the message
-  setTimeout(function() {
-    document.getElementById('message').innerHTML = 'You got a question';
-  }, 20000);
+  
+  // setTimeout(function() {
+  //   setTimeout(function() {
+  //               document.getElementById('message').innerHTML = 'Dear Expert';
+  //           }, 10000);
+
+  //   document.getElementById('message').innerHTML = 'You got a question';
+  // }, 20000);
+  function alternateMessages() {
+            var messageElement = document.getElementById('message');
+            var currentMessage = messageElement.innerHTML;
+
+            if (currentMessage === 'Dear Expert') {
+                messageElement.innerHTML = 'You got a question';
+            } else {
+                messageElement.innerHTML = 'Dear Expert';
+            }
+        }
+
+        setInterval(alternateMessages, 10000);
+  
 </script>
 </body>
 </html>
